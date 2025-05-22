@@ -26,5 +26,15 @@ public class Task {
         this.isCompleted = isCompleted;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Task task = (Task) o;
+        return Objects.equals(titel, task.titel);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(titel);
+    }
 }

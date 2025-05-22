@@ -1,5 +1,7 @@
 package task.collection;
 
+import java.util.Objects;
+
 public class Student {
     private String name;
     private int age;
@@ -17,4 +19,15 @@ public class Student {
         return age;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return age == student.age;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(age);
+    }
 }

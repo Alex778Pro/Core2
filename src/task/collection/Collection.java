@@ -126,12 +126,12 @@ public class Collection {
         }
     }
 
+
     public List<Task> getTasksByTitle(List<Task> tasks, String title) {
         List<Task> tasksSearch = new ArrayList<>();
         for (Task t : tasks) {
             if (title.equals(t.getTitel())) {
                 tasksSearch.add(t);
-                // System.out.println(t.getTitel() + " " + t.getId());
             }
         }
 
@@ -144,6 +144,7 @@ public class Collection {
         }
 
     }
+
 
     public List<Student> getStudentsOlderThan(List<Student> students, int age) {
         List<Student> studentSearch = new ArrayList<>();
