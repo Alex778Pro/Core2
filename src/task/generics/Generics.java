@@ -8,8 +8,7 @@ public class Generics {
     public static <T> T getFirstElement(List<T> list) {
 
         if (list != null && !list.isEmpty()) {
-            T t = list.get(0);
-            return t;
+            return list.getFirst();
         } else {
             throw new IllegalArgumentException();
         }
@@ -18,8 +17,7 @@ public class Generics {
 
     public static <T> T getLastElement(List<T> list) {
         if (list != null && !list.isEmpty()) {
-            T t = list.get(list.size() - 1);
-            return t;
+            return list.getLast();
         } else {
             throw new IllegalArgumentException();
         }
@@ -28,12 +26,8 @@ public class Generics {
     public static <T> List<T> mergeLists(List<T> list1, List<T> list2) {
         if (list1 != null && list2 != null) {
             List<T> list3 = new ArrayList<>();
-            for (T t : list1) {
-                list3.add(t);
-            }
-            for (T t : list2) {
-                list3.add(t);
-            }
+            list3.addAll(list1);
+            list3.addAll(list2);
             return list3;
         } else {
             throw new IllegalArgumentException();

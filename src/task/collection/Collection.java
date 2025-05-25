@@ -23,13 +23,12 @@ public class Collection {
     }
 
     public List<Integer> sortDescending(List<Integer> list) {
-        Collections.sort(list, Collections.reverseOrder());
+        list.sort((a, b) -> b - a);
         return list;
     }
 
     public boolean containsElement(Set<Integer> set, int element) {
-        boolean contains = set.contains(element);
-        return contains;
+        return set.contains(element);
     }
 
     public Set<Integer> findIntersection(Set<Integer> set1, Set<Integer> set2) {
@@ -121,7 +120,7 @@ public class Collection {
     public void printIncompleteTasks(List<Task> tasks) {
         for (Task t : tasks) {
             if (!t.isCompleted()) {
-                System.out.println("Не завершенная задача: " + t.getTitel());
+                System.out.println("Незавершенная задача: " + t.getTitel());
             }
         }
     }
