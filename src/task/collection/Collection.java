@@ -68,12 +68,7 @@ public class Collection {
 
     public void removeEntriesByValue(Map<String, Integer> map, int value) {
         List<String> keysToRemove = new ArrayList<>(); // список ключей для удаления
-
-        for (String key : map.keySet()) {
-            if (map.get(key).equals(value)) {
-                keysToRemove.add(key);
-            }
-        }
+        keysToRemove.addAll(map.keySet());
 
         for (String key : keysToRemove) {
             map.remove(key);
